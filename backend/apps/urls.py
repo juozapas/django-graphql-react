@@ -17,8 +17,8 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 from django.views.decorators.csrf import csrf_exempt
-from graphene_django.views import GraphQLView
-from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
+from graphene_django.views import GraphQLView  # type:ignore
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token  # type:ignore
 
 from apps.schema_view import get_schema
 

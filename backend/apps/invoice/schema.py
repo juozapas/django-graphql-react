@@ -2,11 +2,10 @@ import json
 
 import graphene
 import graphql
-from django.contrib.auth.models import User
-from graphene_django.types import DjangoObjectType
-from graphql_relay.node.node import from_global_id
-
 from apps.invoice import models
+from django.contrib.auth.models import User
+from graphene_django.types import DjangoObjectType  # type: ignore
+from graphql_relay.node.node import from_global_id  # type: ignore
 
 
 class InvoiceType(DjangoObjectType):

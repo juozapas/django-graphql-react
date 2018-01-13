@@ -1,4 +1,4 @@
-import graphene
+import graphene # type: ignore
 
 import apps.invoice.schema
 

@@ -4,7 +4,7 @@ import graphql
 import pytest
 from django.contrib.auth.models import AnonymousUser
 from django.test import RequestFactory
-from graphql_relay.node.node import to_global_id
+from graphql_relay.node.node import to_global_id  # type: ignore
 from mixer.backend.django import mixer
 
 from .. import schema
@@ -54,7 +54,6 @@ def test_create_message_mutation():
     res = mut.mutate(None, info, **data)
     assert res.status == 200, 'Should return 400 if there are form errors'
     assert res.invoice.pk == 1, 'Should create new invoice'
-
 
 
 def test_user_type():
