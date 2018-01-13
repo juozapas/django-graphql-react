@@ -1,0 +1,14 @@
+Django==2.0.1
+django_cors_headers==2.1.0
+
+
+graphene-django==2.0.0
+
+djangorestframework==3.7.7
+djangorestframework_jwt==1.11.0
+
+mixer==6.0.1
+pytest==3.3.2
+pytest-cov==2.5.1
+pytest-django==3.1.2
+pytest-watch==4.1.0
