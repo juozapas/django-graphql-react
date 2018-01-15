@@ -3,12 +3,12 @@
 
 Test project to put together :
 
-Python
-Django 2.0+
-django-graphql
+- Python
+- Django 2.0+
+- django-graphql
 
-Typescript
-React
-react-apollo.
+- Typescript
+- React
+- react-apollo.
 
 
