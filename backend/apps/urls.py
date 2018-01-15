@@ -24,7 +24,7 @@ from apps.schema_view import get_schema
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^graphiql', csrf_exempt(GraphQLView.as_view(graphiql=True, schema=True))),
+    url(r'^graphiql', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     url(r'^gql', csrf_exempt(GraphQLView.as_view(batch=True))),
     url(r'^schema', csrf_exempt(get_schema)),
 

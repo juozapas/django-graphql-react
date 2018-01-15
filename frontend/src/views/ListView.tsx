@@ -1,20 +1,10 @@
-import gql from 'graphql-tag';
 import * as React from 'react'
-import { graphql } from 'react-apollo'
-import  * as Invoices from './Invoices.graphql'
-
+import { graphql, QueryProps } from 'react-apollo'
+import * as types from '../schema'
+import * as Invoices from './Invoices.graphql'
 
 interface Props {
-    data: {
-        allInvoices: [Invoice]
-        loading: boolean
-    }
-
-}
-
-interface Invoice {
-    id: string,
-    number: string
+    data: types.InvoicesQuery & QueryProps
 }
 
 class ListView extends React.Component<Props> {
@@ -22,20 +12,21 @@ class ListView extends React.Component<Props> {
         let { data } = this.props
         console.log(this.props)
 
-        if (data.loading || !data.allInvoices) {
+        if (data.loading || data.allInvoices === null || data.allInvoices.length === 0) {
             return <div>Loading...</div>
         }
+
         return (
             <div>
-                {data.allInvoices.map(item => (
+                {data.allInvoices.map(item => item != null ? (
                     <p key={item.id}>
-                        <div>
+                        <span>
                             {item.number}
-                        </div>
+                        </span>
                     </p>
-                ))}
+                ) : null)}
             </div>)
     }
 }
-console.log('gql', Invoices)
-export default graphql(gql(Invoices))(ListView as any)
+
+export default graphql(Invoices)(ListView)
